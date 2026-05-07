@@ -4,6 +4,7 @@ public class Secmax
     {
         int arr[]={-1,-2,-3,-9,-8};
         System.out.println(solution(arr));
+        
     }
     
     public static int solution(int [] arr)
