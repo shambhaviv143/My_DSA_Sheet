@@ -2,33 +2,29 @@ public class Secmax
 {
     public static void main(String[] args) 
     {
-        int arr[]={1,3,8,3,9};
+        int arr[]={-1,-2,-3,-9,-8};
         System.out.println(solution(arr));
     }
     
     public static int solution(int [] arr)
     {
-        int max=0;
-        
-        
+        int max=Integer.MIN_VALUE;
+        int secmax=Integer.MIN_VALUE;
+       
         for(int i=0; i<arr.length; i++)
         {
             if(arr[i]>max)
             {
+                secmax=max;
                 max=arr[i];
             }
-        }
-        
-        int secmax=0;
-        
-        for(int i=0; i<arr.length; i++)
-        {
-            if(arr[i]>secmax && arr[i]!=max)
+            else if(arr[i]>secmax && arr[i]!=max)
             {
                 secmax=arr[i];
             }
         }
-        
+        if(max==secmax)return -1;
         return secmax;
+
     }
 }
